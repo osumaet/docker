@@ -13,7 +13,7 @@ Image contains list of tools:
 
 # Get image
 
-> docker push osumaet/builda:1.0.0
+> docker pull osumaet/builda:1.0.0
 
 # Usage
 Run container from project's root. Project's folder will be mounted as volume to container.
