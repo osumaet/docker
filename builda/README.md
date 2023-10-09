@@ -1,5 +1,11 @@
-# Image content
-Image contains list of tools:
+BuildA
+===============
+Build C/C++ AVR project.
+
+## Image content
+
+Image contains:
+
 - gcc-avr
 - gcc-avr-doc
 - avr-libc
@@ -11,14 +17,17 @@ Image contains list of tools:
 - cmake
 - minicom
 
-# Get image
+## Get image
 
-> docker pull osumaet/builda:1.0.0
+```sh
+docker pull osumaet/builda:1.0.0
+```
 
-# Usage
+## Usage
+
 Run container from project's root. Project's folder will be mounted as volume to container.
 
 Example for buulding and flash device on /dev/ttyUSB0
-
-> docker run --rm -it -i --device=/dev/ttyUSB0 -v .:/project builda:1.0.0 make
-
+```sh
+docker run --rm -it -i --device=/dev/ttyUSB0 -v .:/project builda:1.0.0 make
+```
