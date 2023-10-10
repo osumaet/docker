@@ -16,7 +16,8 @@ RUN apk update && \
             minicom \
             git \
             bsd-compat-headers
-RUN mkdir /picotool-build && cd /picotool-build && git clone https://github.com/raspberrypi/pico-sdk.git && cd /picotool-build/pico-sdk && cmake . && make
+RUN mkdir /picotool-build && cd /picotool-build && git clone https://github.com/raspberrypi/pico-sdk.git
+RUN cd /picotool-build/pico-sdk && git submodule update --init
 RUN cd /picotool-build && export PICO_SDK_PATH=/picotool-build/pico-sdk && git clone https://github.com/raspberrypi/picotool && cd /picotool-build/picotool && cmake . && make && cp picotool /usr/bin
 RUN rm -R /picotool-build
 RUN apk del git bsd-compat-headers --quiet
